@@ -49,14 +49,14 @@
                     <div class="card-body">
                         <form action="/product/modify" method="post">
                         <div class="input-group mb-3">
-                            <span class="input-group-text">ID</span>
-                            <input type="text" name="id" class="form-control"
-                                   value=<c:out value="${dto.id}"></c:out> readonly>
+                            <span class="input-group-text">상품 번호</span>
+                            <input type="text" name="pno" class="form-control"
+                                   value=<c:out value="${dto.pno}"></c:out> readonly>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">상품 이름</span>
-                            <input type="text" name="name" class="form-control"
-                                   value="<c:out value="${dto.name}"></c:out>" readonly>
+                            <input type="text" name="pname" class="form-control"
+                                   value="<c:out value="${dto.pname}"></c:out>" readonly>
                         </div>
 
                         <div class="input-group mb-3">
@@ -68,8 +68,8 @@
 
                         <div class="input-group mb-3">
                             <span class="input-group-text">재고 수량</span>
-                            <input type="text" name="quantity" class="form-control"
-                                   value=<c:out value="${dto.quantity}"></c:out> readonly>
+                            <input type="text" name="count" class="form-control"
+                                   value=<c:out value="${dto.count}"></c:out> readonly>
 
                         </div>
 
@@ -99,13 +99,13 @@
                             },false);
 
                             document.querySelector(".btn-primary").addEventListener("click", function(e){
-                                self.location = "/product/modify?id="+${dto.id}
+                                self.location = "/product/modify?pno="+${dto.pno}
                             },false)
 
                             /*
                             document.querySelector(".btn-primary").addEventListener("click", function(e){
 
-                                self.location = `/product/modify?id=${dto.id}&${pageRequestDTO.link}`
+                                self.location = `/product/modify?pno=${dto.pno}&${pageRequestDTO.link}`
 
                             },false)
                             */

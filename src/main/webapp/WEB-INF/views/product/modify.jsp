@@ -52,14 +52,14 @@
 
 
                             <div class="input-group mb-3">
-                                <span class="input-group-text">상품ID</span>
-                                <input type="text" name="id" class="form-control"
-                                       value=<c:out value="${dto.id}"></c:out> readonly>
+                                <span class="input-group-text">상품 번호</span>
+                                <input type="text" name="pno" class="form-control"
+                                       value=<c:out value="${dto.pno}"></c:out> readonly>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">상품 이름</span>
-                                <input type="text" name="name" class="form-control"
-                                       value='<c:out value="${dto.name}"></c:out>'>
+                                <input type="text" name="pname" class="form-control"
+                                       value='<c:out value="${dto.pname}"></c:out>'>
                             </div>
 
                             <div class="input-group mb-3">
@@ -70,9 +70,9 @@
                             </div>
 
                             <div class="input-group mb-3">
-                                <span class="input-group-text">quantity</span>
-                                <input type="text" name="quantity" class="form-control"
-                                       value=<c:out value="${dto.quantity}"></c:out>>
+                                <span class="input-group-text">재고 수량</span>
+                                <input type="text" name="count" class="form-control"
+                                       value=<c:out value="${dto.count}"></c:out>>
 
                             </div>
 

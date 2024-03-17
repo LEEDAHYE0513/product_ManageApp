@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssg.product_manageapp.mapper.ProductMapper">
+
+    <select id="select" resultType="com.ssg.product_manageapp.domain.ProductVO">
+        select * from product where pno = #{pno}
+    </select>
+
+    <select id="selectAll" resultType="com.ssg.product_manageapp.domain.ProductVO">
+        select * from product where pname like concat('%', #{pname},'%' ) order by pno;
+    </select>
+
+
+    <insert id="insert">
+        insert  into product(pno,pname,price,count) values ( #{pno}, #{pname}, #{price}, #{count})
+    </insert>
+
+    <update id="update">
+        update product set pname = #{pname}, price =#{price}, count = #{count} where pno =#{pno}
+    </update>
+
+    <delete id="delete">
+        delete from product where pno =#{pno}
+    </delete>
+
+</mapper>

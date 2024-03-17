@@ -50,7 +50,7 @@
                         <form action="/product/register" method="post">
                             <div class="input-group mb-3">
                                 <span class="input-group-text">상품 이름</span>
-                                <input type="text" name="name" class="form-control" placeholder="상품이름">
+                                <input type="text" name="pname" class="form-control" placeholder="상품이름">
                             </div>
 
                             <div class="input-group mb-3">
@@ -60,15 +60,17 @@
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text">재고 수량</span>
-                                <input type="text" name="quantity" class="form-control" placeholder="재고 수량">
+                                <input type="text" name="count" class="form-control" placeholder="재고 수량">
                             </div>
-
-                            <div class="my-4">
-                                <div class="float-end">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                            <form action="product/register" method="post">
+                                <div class="my-4">
+                                    <div class="float-end">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="reset" class="btn btn-secondary">Reset</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
+
                         </form>
 
                         <script>

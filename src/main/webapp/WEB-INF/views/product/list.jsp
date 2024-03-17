@@ -48,7 +48,7 @@
                         <form action="/product/list" method="get">
                             <div class="mb-3">
                                 상품 이름
-                                <input type="text"  name="name" class="form-control" value ='<c:out value="${name}"/>' >
+                                <input type="text"  name="pname" class="form-control" value ='<c:out value="${pname}"/>' >
                             </div>
                             <div class="input-group mb-3">
                                 <div class="float-end">
@@ -67,33 +67,46 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        Featured
+                        상품 목록♥
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
+                        <h5 class="card-title">상품 목록</h5>
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
+                                <th scope="fcol">상품 번호</th>
+                                <th scope="col">상품 이름</th>
+                                <th scope="col">상품 가격</th>
+                                <th scope="col">재고 수량</th>
+                                <th scope="col">수정</th>
+                                <th scope="col">삭제</th>
                             </tr>
                             </thead>
                             <tbody>
                             <c:forEach items="${dtoList}" var="dto">
                                 <tr>
-                                    <th scope="row"><c:out value="${dto.id}"/></th>
+                                    <th scope="row"><c:out value="${dto.pno}"/></th>
                                     <td>
-                                        <a href="/product/read?id=${dto.id}&${pageRequestDTO.link}" class="text-decoration-none" data-id="${dto.id}" >
-                                            <c:out value="${dto.name}"/>
+                                        <a href="/product/read?pno=${dto.pno}&${pageRequestDTO.link}" class="text-decoration-none" data-id="${dto.pno}" >
+                                            <c:out value="${dto.pname}"/>
                                         </a>
                                     </td>
                                     <td><c:out value="${dto.price}"/></td>
-                                    <td><c:out value="${dto.quantity}"/></td>
+                                    <td><c:out value="${dto.count}"/></td>
+                                    <td>
+                                        <form action="/product/modify">
+                                            <input type="hidden" name="pno" value="${dto.pno}">
+                                            <button type="submit">수정</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="/product/remove" method="post">
+                                            <input type="hidden" name="pno" value="${dto.pno}">
+                                            <button type="submit">삭제</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             </c:forEach>
-
 
                             </tbody>
                         </table>
@@ -171,6 +184,11 @@
 
                         </script>
 
+                    </div>
+                    <div class="card-button">
+                        <form action="/product/register">
+                            <button type="submit">상품 추가</button>
+                        </form>
                     </div>
 
                 </div>

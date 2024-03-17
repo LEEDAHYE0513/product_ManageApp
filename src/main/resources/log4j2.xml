@@ -19,5 +19,5 @@
 <root level="INFO" additivity="false">
 <AppenderRef ref="console"/>
 </root>
-        </loggers>
-        </configuration>
+    </loggers>
+</configuration>
